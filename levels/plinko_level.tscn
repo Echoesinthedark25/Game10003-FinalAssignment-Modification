@@ -19,9 +19,9 @@ size = Vector2(20, 140)
 
 [node name="PlinkoLevel" type="Node2D" node_paths=PackedStringArray("ScoreValue", "RespawnMessage", "PlayerDisks", "GameCamera", "FirstPlayer")]
 script = ExtResource("1_lxrb4")
-PlayerScene = ExtResource("4_20e0n")
 ScoreValue = NodePath("CanvasLayer/ScoreValue")
 RespawnMessage = NodePath("CanvasLayer/RespawnMessage")
+PlayerScene = ExtResource("4_20e0n")
 PlayerDisks = NodePath("PlayerDisks")
 GameCamera = NodePath("Camera2D")
 FirstPlayer = NodePath("PlayerDisks/Player")
@@ -75,6 +75,27 @@ position = Vector2(87, 576)
 
 [node name="Row7" parent="Pegs" instance=ExtResource("1_ahvb8")]
 position = Vector2(55, 640)
+
+[node name="Row8" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(88, 190)
+
+[node name="Row9" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(55, 120)
+
+[node name="Row10" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(88, 54)
+
+[node name="Row11" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(55, -11)
+
+[node name="Row12" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(88, -70)
+
+[node name="Row13" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(55, -134)
+
+[node name="Row14" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(88, -201)
 
 [node name="Walls" type="Node2D" parent="."]
 
