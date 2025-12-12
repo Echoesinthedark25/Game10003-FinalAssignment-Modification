@@ -23,7 +23,9 @@ public partial class Bucket : Area2D
 
 		BodyEntered += Bucket_BodyEntered;
 
-		GetNode("Body").GetNode<CollisionShape2D>("BucketCover").Disabled = true;
+		GetNode<StaticBody2D>("Body").CollisionLayer = 2;
+
+		GetNode("Body").GetNode<CollisionShape2D>("BucketCover").Disabled = false;
 		GetNode("Body").GetNode<CollisionShape2D>("BucketCover").Visible = false;
 	}
 
@@ -34,7 +36,7 @@ public partial class Bucket : Area2D
 		{
 			PlinkoLevelNode.IncreaseScore(BucketScore);
 
-			GetNode("Body").
+			GetNode<StaticBody2D>("Body").CollisionLayer = 1;
 			GetNode("Body").GetNode<CollisionShape2D>("BucketCover").Visible = true;
 
 			Player playerDisk = (Player)body;
