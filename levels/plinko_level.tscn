@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyy8uc4m1fvy6"]
+[gd_scene load_steps=16 format=3 uid="uid://cyy8uc4m1fvy6"]
 
 [ext_resource type="PackedScene" uid="uid://ca3o3a5grroel" path="res://prefabs/row/row.tscn" id="1_ahvb8"]
 [ext_resource type="Script" uid="uid://c6ids5c1qtj8g" path="res://levels/PlinkoLevel.cs" id="1_lxrb4"]
@@ -16,6 +16,24 @@ size = Vector2(650, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hhynp"]
 size = Vector2(20, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxrb4"]
+size = Vector2(64.55463, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_al8p8"]
+size = Vector2(20, 4.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2c0j"]
+size = Vector2(20, 2.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ql3yk"]
+size = Vector2(20, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hve32"]
+size = Vector2(20, 3.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exmio"]
+size = Vector2(20, 3.25)
 
 [node name="PlinkoLevel" type="Node2D" node_paths=PackedStringArray("ScoreValue", "RespawnMessage", "PlayerDisks", "GameCamera", "FirstPlayer")]
 script = ExtResource("1_lxrb4")
@@ -233,35 +251,145 @@ position = Vector2(40, 784)
 BucketScore = 100
 PlinkoLevelNode = NodePath("../..")
 
+[node name="Body" type="StaticBody2D" parent="ScoreBuckets/Bucket"]
+
+[node name="BucketCover" type="CollisionShape2D" parent="ScoreBuckets/Bucket/Body"]
+visible = false
+position = Vector2(19, -85)
+rotation = 0.75551254
+shape = SubResource("RectangleShape2D_lxrb4")
+disabled = true
+
+[node name="Rectangle" type="Node2D" parent="ScoreBuckets/Bucket/Body/BucketCover"]
+rotation = -3.124135
+script = ExtResource("3_hhynp")
+size = Vector2(67.85281, 21.734741)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
 [node name="Bucket2" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(128, 784)
 BucketScore = 500
 PlinkoLevelNode = NodePath("../..")
+
+[node name="Body" type="StaticBody2D" parent="ScoreBuckets/Bucket2"]
+
+[node name="BucketCover" type="CollisionShape2D" parent="ScoreBuckets/Bucket2/Body"]
+visible = false
+position = Vector2(4, -61)
+rotation = -3.1415925
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_al8p8")
+
+[node name="Rectangle" type="Node2D" parent="ScoreBuckets/Bucket2/Body/BucketCover"]
+position = Vector2(0.085380554, 0)
+script = ExtResource("3_hhynp")
+size = Vector2(19.538559, 4)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="Bucket3" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(216, 784)
 BucketScore = 1000
 PlinkoLevelNode = NodePath("../..")
 
+[node name="Body" type="StaticBody2D" parent="ScoreBuckets/Bucket3"]
+
+[node name="BucketCover" type="CollisionShape2D" parent="ScoreBuckets/Bucket3/Body"]
+visible = false
+position = Vector2(6, -60.5)
+rotation = -3.1415925
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_r2c0j")
+
+[node name="Rectangle" type="Node2D" parent="ScoreBuckets/Bucket3/Body/BucketCover"]
+position = Vector2(0.25, 0.12500334)
+script = ExtResource("3_hhynp")
+size = Vector2(20, 3.607666)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
 [node name="Bucket4" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(312, 784)
 BucketScore = 5000
 PlinkoLevelNode = NodePath("../..")
+
+[node name="Body" type="StaticBody2D" parent="ScoreBuckets/Bucket4"]
+
+[node name="BucketCover" type="CollisionShape2D" parent="ScoreBuckets/Bucket4/Body"]
+visible = false
+position = Vector2(2, -64)
+rotation = -3.1415925
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_ql3yk")
+
+[node name="Rectangle" type="Node2D" parent="ScoreBuckets/Bucket4/Body/BucketCover"]
+position = Vector2(0.25, -0.04575777)
+script = ExtResource("3_hhynp")
+size = Vector2(20, 2.924652)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="Bucket5" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(408, 784)
 BucketScore = 1000
 PlinkoLevelNode = NodePath("../..")
 
+[node name="Body" type="StaticBody2D" parent="ScoreBuckets/Bucket5"]
+
+[node name="BucketCover" type="CollisionShape2D" parent="ScoreBuckets/Bucket5/Body"]
+visible = false
+position = Vector2(3, -62)
+rotation = -3.1415925
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_hve32")
+
+[node name="Rectangle" type="Node2D" parent="ScoreBuckets/Bucket5/Body/BucketCover"]
+position = Vector2(0.25, -0.04574251)
+script = ExtResource("3_hhynp")
+size = Vector2(20, 3.9491882)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
 [node name="Bucket6" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(496, 784)
 BucketScore = 500
 PlinkoLevelNode = NodePath("../..")
 
+[node name="Body" type="StaticBody2D" parent="ScoreBuckets/Bucket6"]
+
+[node name="BucketCover" type="CollisionShape2D" parent="ScoreBuckets/Bucket6/Body"]
+visible = false
+position = Vector2(6, -62.5)
+rotation = -3.1415925
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_exmio")
+
+[node name="Rectangle" type="Node2D" parent="ScoreBuckets/Bucket6/Body/BucketCover"]
+position = Vector2(0.25, -0.21650362)
+script = ExtResource("3_hhynp")
+size = Vector2(20, 3.9491882)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
 [node name="Bucket7" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(584, 784)
 BucketScore = 100
 PlinkoLevelNode = NodePath("../..")
+
+[node name="Body" type="StaticBody2D" parent="ScoreBuckets/Bucket7"]
+
+[node name="BucketCover" type="CollisionShape2D" parent="ScoreBuckets/Bucket7/Body"]
+visible = false
+position = Vector2(-10, -84)
+rotation = -0.7799232
+shape = SubResource("RectangleShape2D_lxrb4")
+
+[node name="Rectangle" type="Node2D" parent="ScoreBuckets/Bucket7/Body/BucketCover"]
+script = ExtResource("3_hhynp")
+size = Vector2(67.85281, 21.734741)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="PlayerDisks" type="Node2D" parent="."]
 

@@ -7,7 +7,9 @@ public partial class PlinkoLevel : Node2D
 	// this is the value of the current round's score
 	public int Score = 0;
 
-	[Export]
+   
+
+    [Export]
 	public Label ScoreValue;
 
 	[Export]
@@ -27,7 +29,8 @@ public partial class PlinkoLevel : Node2D
 
 
 	// internal variables
-    bool EnableRespawn = false;
+	
+	bool EnableRespawn = false;
 	Vector2 InitialPosition;
 
 
